@@ -16,12 +16,12 @@ class Basic_Sign_In extends StatelessWidget{
                 padding: const EdgeInsets.all(20.0),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                backgroundColor:MyColors.purpleColor,
+                backgroundColor:MyColors.violetColor,
                     minimumSize: const Size(double.infinity, 50),
                           ),
                   child: Text(initialValue),
                     onPressed:(){
-                  Navigator.push(
+                    Navigator.push(
                       context, MaterialPageRoute(
                       builder: (context)=> const Register_View()));
                 }
