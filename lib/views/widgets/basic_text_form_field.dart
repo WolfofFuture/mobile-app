@@ -38,16 +38,15 @@ class BasicTextFormField extends StatelessWidget {
       ],
     );*/
     return Padding(
-      padding: const EdgeInsets.all(15.0), // Add padding to the field
+      padding: const EdgeInsets.all(15.0),
       child: TextFormField(
 
         decoration: InputDecoration(
           border: OutlineInputBorder(),
           labelText: initialValue,
           prefixIcon: image != null ? Padding(
-            padding: const EdgeInsets.all(15.0), // Add padding around the image
-            child: image,
-          ) : null, // Conditionally display the image as a prefix icon
+            padding: const EdgeInsets.all(15.0),
+            child: image,) : null,
         ),
       ),
     );
