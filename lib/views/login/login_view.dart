@@ -1,5 +1,6 @@
 import 'package:dsw_51781/utils/my_images.dart';
 import 'package:dsw_51781/views/register/register_view.dart';
+import 'package:dsw_51781/views/widgets/basic_bold_text.dart';
 import 'package:dsw_51781/views/widgets/basic_sign_in.dart';
 import 'package:dsw_51781/views/widgets/basic_text.dart';
 import 'package:dsw_51781/views/widgets/basic_text_form_field.dart';
@@ -79,7 +80,8 @@ class _Login_ViewState extends State<Login_View> {
               Center(
                 child: Image.asset(MyImages.logo),
               ),
-              _signInText('Mog in'),
+              BasicBoldText(text: 'Mog in',fontSize: 30,),
+              //_signInText('Mog in'),
               //_signInText,
               /*
               VER 1 !TextField(
@@ -128,24 +130,28 @@ class _Login_ViewState extends State<Login_View> {
                 padding: const EdgeInsets.all(8.0),
                 child: Align(
                   alignment: Alignment(1, 0),
-                  child: BasicText(text: 'Forget password?'),
+                  child: BasicBoldText(text: 'Forget password?',),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Basic_Sign_In(initialValue: 'Amogus',),
               ),
-              Center(
-                child: GestureDetector(
-                    child: Text("Don't have account? Sign up!"),
-                    onTap: () {
-                      Navigator.push(
-                        context, MaterialPageRoute(builder:
-                      (context) => const Register_View())
-                      );
-                    }
-                  //onDoubleTap: () => print('clicked twice'),
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  BasicText(text: "Don't have account? "),
+                  GestureDetector(
+                      child: BasicBoldText(text: "Sign up!"),
+                      onTap: () {
+                        Navigator.push(
+                          context, MaterialPageRoute(builder:
+                        (context) => const Register_View())
+                        );
+                      }
+                    //onDoubleTap: () => print('clicked twice'),
+                  ),
+                ],
               ),
             ],
           ),
@@ -155,7 +161,7 @@ class _Login_ViewState extends State<Login_View> {
   }
 }
 //Widget get _signInText(){
-Widget _signInText(String text){
+/*Widget _signInText(String text){
   return Text(
       text,
       //'Sign in',
@@ -165,4 +171,4 @@ Widget _signInText(String text){
           color: MyColors.purpleColor,
       ),
   );
-}
+}*/

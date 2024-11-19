@@ -1,5 +1,6 @@
 import 'package:dsw_51781/utils/extensions.dart';
 import 'package:dsw_51781/utils/my_images.dart';
+import 'package:dsw_51781/views/widgets/basic_log_in_site.dart';
 import 'package:dsw_51781/views/widgets/basic_sign_in.dart';
 import 'package:dsw_51781/views/widgets/basic_text.dart';
 import 'package:flutter/foundation.dart';
@@ -23,7 +24,7 @@ class Logged_In extends StatelessWidget{
               ),
               Padding(
                   padding: const EdgeInsets.all(100.0),
-                  child: Basic_Sign_In(initialValue: 'Powrót',),
+                  child: Log_In_Site(initialValue: 'Powrót',),
               ),
             ],
           ),
