@@ -1,3 +1,4 @@
+import 'package:dsw_51781/views/login/logged_in.dart';
 import 'package:flutter/material.dart';
 import 'package:dsw_51781/utils/my_colors.dart';
 import '../register/register_view.dart';
@@ -19,11 +20,13 @@ class Basic_Sign_In extends StatelessWidget{
                 backgroundColor:MyColors.violetColor,
                     minimumSize: const Size(double.infinity, 50),
                           ),
-                  child: Text(initialValue),
+                  child: Text(initialValue,
+                  style: TextStyle(
+                    color: Colors.white),),
                     onPressed:(){
                     Navigator.push(
                       context, MaterialPageRoute(
-                      builder: (context)=> const Register_View()));
+                      builder: (context)=> const Logged_In()));
                 }
                 ,),
               ),

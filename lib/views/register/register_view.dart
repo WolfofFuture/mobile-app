@@ -10,30 +10,31 @@ class Register_View extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = Extensions.width(context);
-    return Scaffold(
+    return SafeArea(
+      child: Scaffold(
 
-      body:
-        //width < 800 ? Placeholder() : Placeholder(color: Colors.yellow)
-      /*Center(
-        child: ElevatedButton(
-          onPressed: () {
+        body:
+          //width < 800 ? Placeholder() : Placeholder(color: Colors.yellow)
+        /*Center(
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text('Go back!'),
+          ),
+        ),*/
+        GestureDetector(
+          child: Row(
+            children: [
+              Image.asset(MyImages.ico_back),
+              BasicText(text: 'Go back!'),
+            ],
+          ),
+          onTap: () {
             Navigator.pop(context);
           },
-          child: const Text('Go back!'),
-        ),
-      ),*/
-      GestureDetector(
-        child: Row(
-          children: [
-            Image.asset(MyImages.ico_back),
-            BasicText(text: 'Go back!'),
-
-          ],
-        ),
-        onTap: () {
-          Navigator.pop(context);
-        },
-      )
+        )
+      ),
     );
   }
 }
