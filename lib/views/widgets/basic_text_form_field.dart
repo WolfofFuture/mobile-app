@@ -16,7 +16,7 @@ class BasicTextFormField extends StatelessWidget {
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),
-            borderSide: BorderSide(color: MyColors.purpleColor,width: 4)
+            borderSide: BorderSide(color: MyColors.purpleColor,width: 60)
           ),
           labelText: initialValue,
           prefixIcon: image != null ? Padding(

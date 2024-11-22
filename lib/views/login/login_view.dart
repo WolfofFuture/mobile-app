@@ -74,58 +74,16 @@ class _Login_ViewState extends State<Login_View> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              //SingleChildScrollView(),
               const SizedBox(height: 62),
               //Spacer(flex: 32),
               Center(
                 child: Image.asset(MyImages.logo),
               ),
               BasicBoldText(text: 'Mog in',fontSize: 30,),
-              //_signInText('Mog in'),
-              //_signInText,
-              /*
-              VER 1 !TextField(
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'E-mail'
-                ),
-              ),
-              TextField(
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Password'
-                ),
-              ),
-              VER 2 !Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: TextFormField(
-                ),
-              ),
-              VER 3 !Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    const BasicTextFormField(initialValue: 'E-mail',),
-                    const BasicTextFormField(initialValue: 'Password',),
-                  ],
-                ),
-              ),*/
               BasicTextFormField(initialValue: 'E-mail or User Name',
               image: Image.asset(MyImages.user),),
               BasicTextFormField(initialValue: 'Password',
               image: Image.asset(MyImages.locky),),
-              /*Center(
-                child: ElevatedButton(
-
-                  child: const Text('Sign in'),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Register_View()),
-                    );
-                  },
-                ),
-              ),*/
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Align(
@@ -160,15 +118,3 @@ class _Login_ViewState extends State<Login_View> {
     );
   }
 }
-//Widget get _signInText(){
-/*Widget _signInText(String text){
-  return Text(
-      text,
-      //'Sign in',
-      style: TextStyle(
-          fontSize: 30,
-          fontWeight: FontWeight.w700,
-          color: MyColors.purpleColor,
-      ),
-  );
-}*/

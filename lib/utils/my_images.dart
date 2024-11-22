@@ -6,4 +6,6 @@ class MyImages{
     static const ico_back = '$_assetFolder/back.png';
     static const ico_eye = '$_assetFolder/user.png';
     static const stick = '$_assetFolder/stick.gif';
+    static const mail = '$_assetFolder/email.png';
+    static const Ellipse = '$_assetFolder/Ellipse.png';
 }
