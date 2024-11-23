@@ -14,11 +14,11 @@ class Basic_Sign_In extends StatelessWidget{
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(15.0),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                 backgroundColor:MyColors.violetColor,
-                    minimumSize: const Size(double.infinity, 50),
+                    minimumSize: const Size(double.maxFinite, 50),
                           ),
                   child: Text(initialValue,
                   style: TextStyle(

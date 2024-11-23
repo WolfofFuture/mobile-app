@@ -10,13 +10,16 @@ class BasicTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.all(10.0),
       child: TextFormField(
-
         decoration: InputDecoration(
-          border: OutlineInputBorder(
+          /*border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+              borderSide: BorderSide(width: 2,color: MyColors.purpleColor)*/
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(width: 2,color: MyColors.purpleColor),
             borderRadius: BorderRadius.circular(20),
-            borderSide: BorderSide(color: MyColors.purpleColor,width: 60)
+
           ),
           labelText: initialValue,
           prefixIcon: image != null ? Padding(

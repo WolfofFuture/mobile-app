@@ -1,6 +1,9 @@
 import 'package:dsw_51781/utils/extensions.dart';
 import 'package:dsw_51781/utils/my_images.dart';
+import 'package:dsw_51781/views/login/logged_in.dart';
+import 'package:dsw_51781/views/login/login_view.dart';
 import 'package:dsw_51781/views/widgets/basic_bold_text.dart';
+import 'package:dsw_51781/views/widgets/basic_sign_in.dart';
 import 'package:dsw_51781/views/widgets/basic_text.dart';
 import 'package:dsw_51781/views/widgets/basic_text_form_field.dart';
 import 'package:flutter/foundation.dart';
@@ -21,33 +24,62 @@ class Register_View extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 12,top: 60),
-                child: GestureDetector(
-                  child: Row(
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 12,top: 15),
+                    child: GestureDetector(
+                      child: Row(
+                        children: [
+                          Image.asset(MyImages.ico_back),
+                          BasicText(text: 'Go back!'),
+                        ],),
+                      onTap: () {
+                        Navigator.pop(context);},),),
+                  Row(
                     children: [
-                      Image.asset(MyImages.ico_back),
-                      BasicText(text: 'Go back!'),
-                    ],),
-                  onTap: () {
-                    Navigator.pop(context);},),),
-              Padding(padding: const EdgeInsets.only(left: 28,top: 101),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 171),
+                        child: Image.asset(MyImages.Ellipse),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Padding(padding: const EdgeInsets.only(left: 25,top: 60),
               child: BasicBoldText(text: 'Sign Up',fontSize: 30,),),
               Padding(
-                padding: const EdgeInsets.only(left: 10,top: 46),
+                padding: const EdgeInsets.only(left: 10,top: 20),
                 child: Column(
-                  children: [//Spacer(flex: 2),
+                  children: [
                     BasicTextFormField(initialValue: 'Full Name', image: Image.asset(MyImages.user),),
                     BasicTextFormField(initialValue: 'Email',image: Image.asset(MyImages.mail),),
                     BasicTextFormField(initialValue: 'Password',image: Image.asset(MyImages.locky),),
                     BasicTextFormField(initialValue: 'Confirm Password',image: Image.asset(MyImages.locky),),
+                    Basic_Sign_In(initialValue: 'Sign Up',),
+                    Padding(padding: const EdgeInsets.only(top:110),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        BasicText(text: "Already have an account? "),
+                        GestureDetector(
+                            child: BasicBoldText(text: "Sign In!"),
+                            onTap: () {
+                              Navigator.push(
+                                  context, MaterialPageRoute(builder:
+                                  (context) => const Login_View())
+                              );
+                            }
+                          //onDoubleTap: () => print('clicked twice'),
+                        ),
+                      ],
+                    ),)
                   ],
                 ),
               ),
             ],
           ),
         ),
-
       ),
     );
   }

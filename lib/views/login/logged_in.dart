@@ -12,25 +12,26 @@ class Logged_In extends StatelessWidget{
   Widget build(BuildContext context) {
     final width = Extensions.width(context);
     return SafeArea(child: Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(50.0),
-        child: Center(
-          child: Column(
-            children: [
-              BasicText(text: 'Zalogowany! :D'),
-              Padding(
-                padding: const EdgeInsets.all(80.0),
-                child: Image.asset(MyImages.stick),
-              ),
-              Padding(
-                  padding: const EdgeInsets.all(100.0),
-                  child: Log_In_Site(initialValue: 'Powrót',),
-              ),
-            ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(50.0),
+          child: Center(
+            child: Column(
+              children: [
+                BasicText(text: 'Zalogowany! :D'),
+                Padding(
+                  padding: const EdgeInsets.all(80.0),
+                  child: Image.asset(MyImages.stick),
+                ),
+                Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Log_In_Site(initialValue: 'Powrót',),
+                ),
+              ],
+            ),
           ),
         ),
       ),
-
     ));
   }
 }

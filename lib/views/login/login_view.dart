@@ -79,37 +79,44 @@ class _Login_ViewState extends State<Login_View> {
               Center(
                 child: Image.asset(MyImages.logo),
               ),
-              BasicBoldText(text: 'Mog in',fontSize: 30,),
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: BasicBoldText(text: 'Sign in',fontSize: 30,),
+              ),
               BasicTextFormField(initialValue: 'E-mail or User Name',
               image: Image.asset(MyImages.user),),
               BasicTextFormField(initialValue: 'Password',
-              image: Image.asset(MyImages.locky),),
+              image: Image.asset(MyImages.locky),
+              ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(right: 15,top: 15),
                 child: Align(
                   alignment: Alignment(1, 0),
                   child: BasicBoldText(text: 'Forget password?',),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Basic_Sign_In(initialValue: 'Amogus',),
+                padding: const EdgeInsets.only(top: 20),
+                child: Basic_Sign_In(initialValue: 'Sign in',),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  BasicText(text: "Don't have account? "),
-                  GestureDetector(
-                      child: BasicBoldText(text: "Sign up!"),
-                      onTap: () {
-                        Navigator.push(
-                          context, MaterialPageRoute(builder:
-                        (context) => const Register_View())
-                        );
-                      }
-                    //onDoubleTap: () => print('clicked twice'),
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(top: 200),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    BasicText(text: "Don't have account? "),
+                    GestureDetector(
+                        child: BasicBoldText(text: "Sign up!"),
+                        onTap: () {
+                          Navigator.push(
+                            context, MaterialPageRoute(builder:
+                          (context) => const Register_View())
+                          );
+                        }
+                      //onDoubleTap: () => print('clicked twice'),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
