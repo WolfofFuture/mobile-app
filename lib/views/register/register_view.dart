@@ -22,7 +22,7 @@ class Register_View extends StatelessWidget {
           //width < 800 ? Placeholder() : Placeholder(color: Colors.yellow)
         SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+           // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
@@ -36,26 +36,22 @@ class Register_View extends StatelessWidget {
                         ],),
                       onTap: () {
                         Navigator.pop(context);},),),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 171),
-                        child: Image.asset(MyImages.Ellipse),
-                      ),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.only(left: 199),
+                    child: Image.asset(MyImages.Ellipse),
                   ),
                 ],
               ),
-              Padding(padding: const EdgeInsets.only(left: 25,top: 60),
+              Padding(padding: const EdgeInsets.only(left: 25,top: 55),
               child: BasicBoldText(text: 'Sign Up',fontSize: 30,),),
               Padding(
                 padding: const EdgeInsets.only(left: 10,top: 20),
                 child: Column(
                   children: [
-                    BasicTextFormField(initialValue: 'Full Name', image: Image.asset(MyImages.user),),
-                    BasicTextFormField(initialValue: 'Email',image: Image.asset(MyImages.mail),),
-                    BasicTextFormField(initialValue: 'Password',image: Image.asset(MyImages.locky),),
-                    BasicTextFormField(initialValue: 'Confirm Password',image: Image.asset(MyImages.locky),),
+                    BasicTextFormField(initialValue: 'Full Name', image1: Image.asset(MyImages.user),),
+                    BasicTextFormField(initialValue: 'Email',image1: Image.asset(MyImages.mail),),
+                    BasicTextFormField(initialValue: 'Password',image1: Image.asset(MyImages.locky),image2: Image.asset(MyImages.ico_eye),),
+                    BasicTextFormField(initialValue: 'Confirm Password',image1: Image.asset(MyImages.locky),image2: Image.asset(MyImages.ico_eye),),
                     Basic_Sign_In(initialValue: 'Sign Up',),
                     Padding(padding: const EdgeInsets.only(top:110),
                     child: Row(

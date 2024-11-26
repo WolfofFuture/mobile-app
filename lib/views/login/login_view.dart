@@ -84,9 +84,9 @@ class _Login_ViewState extends State<Login_View> {
                 child: BasicBoldText(text: 'Sign in',fontSize: 30,),
               ),
               BasicTextFormField(initialValue: 'E-mail or User Name',
-              image: Image.asset(MyImages.user),),
+              image1: Image.asset(MyImages.user),),
               BasicTextFormField(initialValue: 'Password',
-              image: Image.asset(MyImages.locky),
+              image1: Image.asset(MyImages.locky), image2: Image.asset(MyImages.ico_eye),
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 15,top: 15),
@@ -100,7 +100,7 @@ class _Login_ViewState extends State<Login_View> {
                 child: Basic_Sign_In(initialValue: 'Sign in',),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 200),
+                padding: const EdgeInsets.only(top: 190),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

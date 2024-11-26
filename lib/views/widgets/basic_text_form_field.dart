@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 
 class BasicTextFormField extends StatelessWidget {
   final String initialValue;
-  final Image? image;
-  const BasicTextFormField({super.key,this.initialValue = '',this.image});
+  final Image? image1;
+  final Image? image2;
+  const BasicTextFormField({super.key,this.initialValue = '',this.image1,this.image2});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,9 +23,12 @@ class BasicTextFormField extends StatelessWidget {
 
           ),
           labelText: initialValue,
-          prefixIcon: image != null ? Padding(
+          prefixIcon: image1 != null ? Padding(
             padding: const EdgeInsets.all(15.0),
-            child: image,) : null,
+            child: image1,) : null,
+          suffixIcon: image2 != null ? Padding(
+              padding: const EdgeInsets.only(right: 15),
+              child: image2,):null,
         ),
       ),
     );
