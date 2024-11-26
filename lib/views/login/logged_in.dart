@@ -18,7 +18,7 @@ class Logged_In extends StatelessWidget{
           child: Center(
             child: Column(
               children: [
-                BasicText(text: 'Zalogowany! :D'),
+                BasicText(text: 'Zalogowany!  :D'),
                 Padding(
                   padding: const EdgeInsets.all(80.0),
                   child: Image.asset(MyImages.stick),
