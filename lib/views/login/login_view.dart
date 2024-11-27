@@ -6,7 +6,9 @@ import 'package:dsw_51781/views/widgets/basic_text.dart';
 import 'package:dsw_51781/views/widgets/basic_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:dsw_51781/utils/my_colors.dart';
-//import 'package:dsw_51781/views/register/register_view.dart';
+import 'package:dsw_51781/views/register/register_view.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 
 class Login_View extends StatefulWidget {
   const Login_View({super.key});

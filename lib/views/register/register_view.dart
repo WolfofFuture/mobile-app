@@ -8,23 +8,30 @@ import 'package:dsw_51781/views/widgets/basic_text.dart';
 import 'package:dsw_51781/views/widgets/basic_text_form_field.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class Register_View extends StatelessWidget {
+import '../../utils/my_colors.dart';
+
+class Register_View extends StatefulWidget {
   const Register_View({super.key});
 
+  @override
+  State<Register_View> createState() => _Register_ViewState();
+}
+
+class _Register_ViewState extends State<Register_View> {
   @override
   Widget build(BuildContext context) {
     final width = Extensions.width(context);
     return SafeArea(
       child: Scaffold(
-
         body:
           //width < 800 ? Placeholder() : Placeholder(color: Colors.yellow)
         SingleChildScrollView(
           child: Column(
-           // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 12,top: 15),
@@ -32,14 +39,13 @@ class Register_View extends StatelessWidget {
                       child: Row(
                         children: [
                           Image.asset(MyImages.ico_back),
-                          BasicText(text: 'Go back!'),
+                          BasicText(text: 'Back!'),
                         ],),
                       onTap: () {
                         Navigator.pop(context);},),),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 199),
-                    child: Image.asset(MyImages.Ellipse),
-                  ),
+                  Align(
+                    alignment: Alignment.topRight,
+                      child: Image.asset(MyImages.Ellipse)),
                 ],
               ),
               Padding(padding: const EdgeInsets.only(left: 25,top: 55),
@@ -52,8 +58,17 @@ class Register_View extends StatelessWidget {
                     BasicTextFormField(initialValue: 'Email',image1: Image.asset(MyImages.mail),),
                     BasicTextFormField(initialValue: 'Password',image1: Image.asset(MyImages.locky),image2: Image.asset(MyImages.ico_eye),),
                     BasicTextFormField(initialValue: 'Confirm Password',image1: Image.asset(MyImages.locky),image2: Image.asset(MyImages.ico_eye),),
-                    Basic_Sign_In(initialValue: 'Sign Up',),
-                    Padding(padding: const EdgeInsets.only(top:110),
+                    Center(
+                      child: Padding(padding: const EdgeInsets.all(15),
+                      child: ElevatedButton(style: ElevatedButton.styleFrom(
+                        backgroundColor:MyColors.violetColor,
+                        minimumSize: const Size(double.maxFinite, 50),
+                      ),onPressed: ()async{},
+                          child: Text('Sign Up',style: TextStyle(
+                            color: Colors.white,),)),),
+                    ),
+                    //Basic_Sign_In(initialValue: 'Sign Up',),
+                    Padding(padding: const EdgeInsets.only(top:100),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
