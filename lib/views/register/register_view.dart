@@ -54,10 +54,10 @@ class _Register_ViewState extends State<Register_View> {
                 padding: const EdgeInsets.only(left: 10,top: 20),
                 child: Column(
                   children: [
-                    BasicTextFormField(initialValue: 'Full Name', image1: Image.asset(MyImages.user),),
-                    BasicTextFormField(initialValue: 'Email',image1: Image.asset(MyImages.mail),),
-                    BasicTextFormField(initialValue: 'Password',image1: Image.asset(MyImages.locky),image2: Image.asset(MyImages.ico_eye),),
-                    BasicTextFormField(initialValue: 'Confirm Password',image1: Image.asset(MyImages.locky),image2: Image.asset(MyImages.ico_eye),),
+                    BasicTextFormField(hintText: 'Full Name', image1: Image.asset(MyImages.user),),
+                    BasicTextFormField(hintText: 'Email',image1: Image.asset(MyImages.mail),),
+                    BasicTextFormField(hintText: 'Password',image1: Image.asset(MyImages.locky),image2: Image.asset(MyImages.ico_eye),),
+                    BasicTextFormField(hintText: 'Confirm Password',image1: Image.asset(MyImages.locky),image2: Image.asset(MyImages.ico_eye),),
                     Center(
                       child: Padding(padding: const EdgeInsets.all(15),
                       child: ElevatedButton(style: ElevatedButton.styleFrom(

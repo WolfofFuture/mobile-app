@@ -1,72 +1,26 @@
 import 'package:dsw_51781/utils/my_images.dart';
-import 'package:dsw_51781/views/login/home.dart';
+import 'package:dsw_51781/utils/my_strings.dart';
+import 'package:dsw_51781/views/home/home.dart';
 import 'package:dsw_51781/views/register/register_view.dart';
 import 'package:dsw_51781/views/widgets/basic_bold_text.dart';
 import 'package:dsw_51781/views/widgets/basic_sign_in.dart';
 import 'package:dsw_51781/views/widgets/basic_text.dart';
 import 'package:dsw_51781/views/widgets/basic_text_form_field.dart';
+import 'package:dsw_51781/views/widgets/title_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:dsw_51781/utils/my_colors.dart';
 import 'package:dsw_51781/views/register/register_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
-class Login_View extends StatefulWidget {
-  const Login_View({super.key});
+class NewLogin extends StatefulWidget {
+  const NewLogin({super.key});
 
   @override
-  State<Login_View> createState() => _Login_ViewState();
+  State<NewLogin> createState() => _NewLogin();
 }
 
-class _Login_ViewState extends State<Login_View> {
-  /*late final AppLifecycleListener _listener;
-  String _currentState = '';
-  @override
-  void initState(){
-    super.initState();
-    _listener = AppLifecycleListener(
-      onDetach: _onDetach,
-      onHide: _onHide,
-      onInactive: _onInactive,
-      onPause: _onPause,
-      onRestart: _onRestart,
-      onResume: _onResume,
-      onShow: _onShow,
-    );
-  }
-  @override
-  void dispose(){
-    super.dispose();
-    _listener.dispose();
-  }
-  void _onDetach(){
-    print('onDetach');
-    _currentState = 'onDetach';
-  }
-  void _onHide(){
-    print('onHide');
-    _currentState = 'onHide';
-  }
-  void _onInactive(){
-    print('onInactive');
-    _currentState = 'onInactive';
-  }
-  void _onPause(){
-    print('onPause');
-    _currentState = 'onPause';
-  }
-  void _onRestart(){
-    print('onRestart');
-    _currentState = 'onRestart';
-  }
-  void _onResume(){
-    print('onResume');
-    _currentState = 'onResume';
-  }
-  void _onShow(){
-    print('onShow');
-    _currentState = 'onShow';
-  }*/
+class _NewLogin extends State<NewLogin> {
   @override
   Widget build(BuildContext context) {
     var boolValue = false;
@@ -86,11 +40,25 @@ class _Login_ViewState extends State<Login_View> {
                 padding: const EdgeInsets.only(left: 20),
                 child: BasicBoldText(text: 'Sign in',fontSize: 30,),
               ),
-              BasicTextFormField(hintText: 'E-mail or User Name',
-              image1: Image.asset(MyImages.user),),
-              BasicTextFormField(hintText: 'Password',
-              image1: Image.asset(MyImages.locky), image2: Image.asset(MyImages.ico_eye),
-              ),
+              Padding(padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Column(
+                children: [
+                  const SizedBox(height: 35,),
+                  TitleScreen(title: MyStrings.hello),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: MyColors.violetColor
+                    ),
+                  )
+                ],
+              ),),
+              /*
+              BasicTextFormField(initialValue: 'E-mail or User Name',
+                image1: Image.asset(MyImages.user),),
+              BasicTextFormField(initialValue: 'Password',
+                image1: Image.asset(MyImages.locky), image2: Image.asset(MyImages.ico_eye),
+              ),*/
               Padding(
                 padding: const EdgeInsets.only(right: 15,top: 15),
                 child: Align(
@@ -112,8 +80,8 @@ class _Login_ViewState extends State<Login_View> {
                         child: BasicBoldText(text: "Sign up!"),
                         onTap: () {
                           Navigator.push(
-                            context, MaterialPageRoute(builder:
-                          (context) => const Register_View())
+                              context, MaterialPageRoute(builder:
+                              (context) => const Register_View())
                           );
                         }
                       //onDoubleTap: () => print('clicked twice'),
