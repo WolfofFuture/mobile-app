@@ -1,5 +1,5 @@
 import 'package:dsw_51781/utils/my_images.dart';
-import 'package:dsw_51781/views/login/home.dart';
+import 'package:dsw_51781/views/home/home.dart';
 import 'package:dsw_51781/views/register/register_view.dart';
 import 'package:dsw_51781/views/widgets/basic_bold_text.dart';
 import 'package:dsw_51781/views/widgets/basic_sign_in.dart';
