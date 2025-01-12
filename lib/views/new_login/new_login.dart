@@ -6,6 +6,7 @@ import 'package:dsw_51781/views/widgets/basic_bold_text.dart';
 import 'package:dsw_51781/views/widgets/basic_sign_in.dart';
 import 'package:dsw_51781/views/widgets/basic_text.dart';
 import 'package:dsw_51781/views/widgets/basic_text_form_field.dart';
+import 'package:dsw_51781/views/widgets/basic_text_form_field_original.dart';
 import 'package:dsw_51781/views/widgets/title_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:dsw_51781/utils/my_colors.dart';
@@ -40,7 +41,7 @@ class _NewLogin extends State<NewLogin> {
                 padding: const EdgeInsets.only(left: 20),
                 child: BasicBoldText(text: 'Sign in',fontSize: 30,),
               ),
-              BasicTextFormField(hintText: 'E-mail or User Name',
+              BasicTextFormField_ORG(hintText: 'E-mail or User Name',
                 image1: Image.asset(MyImages.user),),
               BasicTextFormField(hintText: 'Password', isPasswordField:true,
                 image1: Image.asset(MyImages.locky), image2: Image.asset(MyImages.ico_eye),

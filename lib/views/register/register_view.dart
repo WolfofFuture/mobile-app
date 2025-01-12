@@ -2,10 +2,12 @@ import 'package:dsw_51781/utils/extensions.dart';
 import 'package:dsw_51781/utils/my_images.dart';
 import 'package:dsw_51781/views/login/logged_in.dart';
 import 'package:dsw_51781/views/login/login_view.dart';
+import 'package:dsw_51781/views/new_login/new_login.dart';
 import 'package:dsw_51781/views/widgets/basic_bold_text.dart';
 import 'package:dsw_51781/views/widgets/basic_sign_in.dart';
 import 'package:dsw_51781/views/widgets/basic_text.dart';
 import 'package:dsw_51781/views/widgets/basic_text_form_field.dart';
+import 'package:dsw_51781/views/widgets/basic_text_form_field_original.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -54,10 +56,12 @@ class _Register_ViewState extends State<Register_View> {
                 padding: const EdgeInsets.only(left: 10,top: 20),
                 child: Column(
                   children: [
-                    BasicTextFormField(hintText: 'Full Name', image1: Image.asset(MyImages.user),),
-                    BasicTextFormField(hintText: 'Email',image1: Image.asset(MyImages.mail),),
-                    BasicTextFormField(hintText: 'Password',image1: Image.asset(MyImages.locky),image2: Image.asset(MyImages.ico_eye),),
-                    BasicTextFormField(hintText: 'Confirm Password',image1: Image.asset(MyImages.locky),image2: Image.asset(MyImages.ico_eye),),
+                    BasicTextFormField_ORG(hintText: 'Full Name', image1: Image.asset(MyImages.user),),
+                    BasicTextFormField_ORG(hintText: 'Email',image1: Image.asset(MyImages.mail),),
+                    BasicTextFormField(hintText: 'Password',isPasswordField:true,
+                      image1: Image.asset(MyImages.locky),),
+                    BasicTextFormField(hintText: 'Confirm Password',isPasswordField:true,
+                      image1: Image.asset(MyImages.locky),),
                     Center(
                       child: Padding(padding: const EdgeInsets.all(15),
                       child: ElevatedButton(style: ElevatedButton.styleFrom(
@@ -78,7 +82,7 @@ class _Register_ViewState extends State<Register_View> {
                             onTap: () {
                               Navigator.push(
                                   context, MaterialPageRoute(builder:
-                                  (context) => const Login_View())
+                                  (context) => const NewLogin())
                               );
                             }
                           //onDoubleTap: () => print('clicked twice'),

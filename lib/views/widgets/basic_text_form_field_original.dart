@@ -3,11 +3,17 @@ import 'package:dsw_51781/utils/my_colors.dart';
 import 'package:flutter/material.dart';
 
 
-class BasicTextFormField extends StatelessWidget {
-  final String initialValue;
+class BasicTextFormField_ORG extends StatefulWidget {
+  final String hintText;
   final Image? image1;
   final Image? image2;
-  const BasicTextFormField({super.key,this.initialValue = '',this.image1,this.image2});
+  const BasicTextFormField_ORG({super.key,this.hintText = '',this.image1,this.image2});
+
+  @override
+  State<BasicTextFormField_ORG> createState() => _BasicTextFormField_ORGState();
+}
+
+class _BasicTextFormField_ORGState extends State<BasicTextFormField_ORG> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,18 +23,18 @@ class BasicTextFormField extends StatelessWidget {
           /*border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
               borderSide: BorderSide(width: 2,color: MyColors.purpleColor)*/
-          enabledBorder: OutlineInputBorder(
+          labelText: widget.hintText,
+          border: OutlineInputBorder(
             borderSide: BorderSide(width: 2,color: MyColors.purpleColor),
             borderRadius: BorderRadius.circular(20),
 
           ),
-          labelText: initialValue,
-          prefixIcon: image1 != null ? Padding(
+          prefixIcon: widget.image1 != null ? Padding(
             padding: const EdgeInsets.all(15.0),
-            child: image1,) : null,
-          suffixIcon: image2 != null ? Padding(
+            child: widget.image1,) : null,
+          suffixIcon: widget.image2 != null ? Padding(
               padding: const EdgeInsets.only(right: 15),
-              child: image2,):null,
+              child: widget.image2,):null,
         ),
       ),
     );
