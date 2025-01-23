@@ -1,3 +1,4 @@
+import 'package:dsw_51781/views/home/home.dart';
 import 'package:dsw_51781/views/login/logged_in.dart';
 import 'package:flutter/material.dart';
 import 'package:dsw_51781/utils/my_colors.dart';
@@ -27,7 +28,7 @@ class Basic_Sign_In extends StatelessWidget{
                         (){
                     Navigator.push(
                       context, MaterialPageRoute(
-                      builder: (context)=>  Logged_In()));
+                      builder: (context)=>  Home()));
                 }
                 ,),
               ),

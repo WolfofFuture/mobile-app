@@ -24,6 +24,7 @@ class _BasicTextFormField_ORGState extends State<BasicTextFormField_ORG> {
               borderRadius: BorderRadius.circular(20),
               borderSide: BorderSide(width: 2,color: MyColors.purpleColor)*/
           labelText: widget.hintText,
+          labelStyle: TextStyle(color: MyColors.violetColor),
           border: OutlineInputBorder(
             borderSide: BorderSide(width: 2,color: MyColors.purpleColor),
             borderRadius: BorderRadius.circular(20),

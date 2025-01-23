@@ -25,75 +25,73 @@ class _Register_ViewState extends State<Register_View> {
   @override
   Widget build(BuildContext context) {
     final width = Extensions.width(context);
-    return SafeArea(
-      child: Scaffold(
-        body:
-          //width < 800 ? Placeholder() : Placeholder(color: Colors.yellow)
-        SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Scaffold(
+      body:
+        //width < 800 ? Placeholder() : Placeholder(color: Colors.yellow)
+      SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 12,top: 15),
+                  child: GestureDetector(
+                    child: Row(
+                      children: [
+                        Image.asset(MyImages.ico_back),
+                        BasicText(text: 'Back!'),
+                      ],),
+                    onTap: () {
+                      Navigator.pop(context);},),),
+                Align(
+                  alignment: Alignment.topRight,
+                    child: Image.asset(MyImages.Ellipse)),
+              ],
+            ),
+            Padding(padding: const EdgeInsets.only(left: 25,top: 55),
+            child: BasicBoldText(text: 'Sign Up',fontSize: 30,),),
+            Padding(
+              padding: const EdgeInsets.only(left: 10,top: 20),
+              child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 12,top: 15),
-                    child: GestureDetector(
-                      child: Row(
-                        children: [
-                          Image.asset(MyImages.ico_back),
-                          BasicText(text: 'Back!'),
-                        ],),
-                      onTap: () {
-                        Navigator.pop(context);},),),
-                  Align(
-                    alignment: Alignment.topRight,
-                      child: Image.asset(MyImages.Ellipse)),
+                  BasicTextFormField_ORG(hintText: 'Full Name', image1: Image.asset(MyImages.user),),
+                  BasicTextFormField_ORG(hintText: 'Email',image1: Image.asset(MyImages.mail),),
+                  BasicTextFormField(hintText: 'Password',isPasswordField:true,
+                    image1: Image.asset(MyImages.locky),),
+                  BasicTextFormField(hintText: 'Confirm Password',isPasswordField:true,
+                    image1: Image.asset(MyImages.locky),),
+                  Center(
+                    child: Padding(padding: const EdgeInsets.all(15),
+                    child: ElevatedButton(style: ElevatedButton.styleFrom(
+                      backgroundColor:MyColors.violetColor,
+                      minimumSize: const Size(double.maxFinite, 50),
+                    ),onPressed: ()async{},
+                        child: Text('Sign Up',style: TextStyle(
+                          color: Colors.white,),)),),
+                  ),
+                  //Basic_Sign_In(initialValue: 'Sign Up',),
+                  Padding(padding: const EdgeInsets.only(top:100),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      BasicText(text: "Already have an account? "),
+                      GestureDetector(
+                          child: BasicBoldText(text: "Sign In!"),
+                          onTap: () {
+                            Navigator.push(
+                                context, MaterialPageRoute(builder:
+                                (context) => const NewLogin())
+                            );
+                          }
+                        //onDoubleTap: () => print('clicked twice'),
+                      ),
+                    ],
+                  ),)
                 ],
               ),
-              Padding(padding: const EdgeInsets.only(left: 25,top: 55),
-              child: BasicBoldText(text: 'Sign Up',fontSize: 30,),),
-              Padding(
-                padding: const EdgeInsets.only(left: 10,top: 20),
-                child: Column(
-                  children: [
-                    BasicTextFormField_ORG(hintText: 'Full Name', image1: Image.asset(MyImages.user),),
-                    BasicTextFormField_ORG(hintText: 'Email',image1: Image.asset(MyImages.mail),),
-                    BasicTextFormField(hintText: 'Password',isPasswordField:true,
-                      image1: Image.asset(MyImages.locky),),
-                    BasicTextFormField(hintText: 'Confirm Password',isPasswordField:true,
-                      image1: Image.asset(MyImages.locky),),
-                    Center(
-                      child: Padding(padding: const EdgeInsets.all(15),
-                      child: ElevatedButton(style: ElevatedButton.styleFrom(
-                        backgroundColor:MyColors.violetColor,
-                        minimumSize: const Size(double.maxFinite, 50),
-                      ),onPressed: ()async{},
-                          child: Text('Sign Up',style: TextStyle(
-                            color: Colors.white,),)),),
-                    ),
-                    //Basic_Sign_In(initialValue: 'Sign Up',),
-                    Padding(padding: const EdgeInsets.only(top:100),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        BasicText(text: "Already have an account? "),
-                        GestureDetector(
-                            child: BasicBoldText(text: "Sign In!"),
-                            onTap: () {
-                              Navigator.push(
-                                  context, MaterialPageRoute(builder:
-                                  (context) => const NewLogin())
-                              );
-                            }
-                          //onDoubleTap: () => print('clicked twice'),
-                        ),
-                      ],
-                    ),)
-                  ],
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

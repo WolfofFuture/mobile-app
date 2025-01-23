@@ -6,7 +6,7 @@ void main() {
   runApp(
       const MaterialApp(
 
-        title: 'Navigation Basics',
+        title: 'Notes App',
 
         debugShowCheckedModeBanner: false,
 
