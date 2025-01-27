@@ -13,7 +13,7 @@ class BasicTextFormField extends StatefulWidget {
   const BasicTextFormField({required this.hintText,
     this.image1,this.image2,
     this.isPasswordField = false,
-    super.key});
+    super.key, required TextEditingController controller});
   @override
   State<BasicTextFormField> createState() => _BasicTextFormFieldState();}
 

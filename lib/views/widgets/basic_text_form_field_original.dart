@@ -7,7 +7,7 @@ class BasicTextFormField_ORG extends StatefulWidget {
   final String hintText;
   final Image? image1;
   final Image? image2;
-  const BasicTextFormField_ORG({super.key,this.hintText = '',this.image1,this.image2});
+  const BasicTextFormField_ORG({super.key,this.hintText = '',this.image1,this.image2, required TextEditingController controller});
 
   @override
   State<BasicTextFormField_ORG> createState() => _BasicTextFormField_ORGState();

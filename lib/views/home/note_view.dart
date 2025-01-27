@@ -1,5 +1,6 @@
 import 'package:dsw_51781/utils/database_help.dart';
 import 'package:dsw_51781/views/home/add_edit_screen.dart';
+import 'package:dsw_51781/views/home/home_notes.dart';
 import 'package:flutter/material.dart';
 
 import '../notes/notes_model.dart';
@@ -29,7 +30,9 @@ class ViewNoteScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-            onPressed: () => Navigator.pop(context),
+            onPressed: () => Navigator.pop(
+                context, MaterialPageRoute(builder:
+                (context) => const Home())),
             icon: Icon(
               Icons.arrow_back,
               color: Colors.white,

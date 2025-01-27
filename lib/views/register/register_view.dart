@@ -1,7 +1,6 @@
 import 'package:dsw_51781/utils/extensions.dart';
 import 'package:dsw_51781/utils/my_images.dart';
 import 'package:dsw_51781/views/login/logged_in.dart';
-import 'package:dsw_51781/views/login/login_view.dart';
 import 'package:dsw_51781/views/new_login/new_login.dart';
 import 'package:dsw_51781/views/widgets/basic_bold_text.dart';
 import 'package:dsw_51781/views/widgets/basic_sign_in.dart';
@@ -22,6 +21,8 @@ class Register_View extends StatefulWidget {
 }
 
 class _Register_ViewState extends State<Register_View> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwdController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final width = Extensions.width(context);
@@ -55,12 +56,12 @@ class _Register_ViewState extends State<Register_View> {
               padding: const EdgeInsets.only(left: 10,top: 20),
               child: Column(
                 children: [
-                  BasicTextFormField_ORG(hintText: 'Full Name', image1: Image.asset(MyImages.user),),
-                  BasicTextFormField_ORG(hintText: 'Email',image1: Image.asset(MyImages.mail),),
+                  BasicTextFormField_ORG(hintText: 'Full Name', image1: Image.asset(MyImages.user), controller: emailController,),
+                  BasicTextFormField_ORG(hintText: 'Email',image1: Image.asset(MyImages.mail), controller: emailController,),
                   BasicTextFormField(hintText: 'Password',isPasswordField:true,
-                    image1: Image.asset(MyImages.locky),),
+                    image1: Image.asset(MyImages.locky), controller: passwdController,),
                   BasicTextFormField(hintText: 'Confirm Password',isPasswordField:true,
-                    image1: Image.asset(MyImages.locky),),
+                    image1: Image.asset(MyImages.locky), controller: passwdController,),
                   Center(
                     child: Padding(padding: const EdgeInsets.all(15),
                     child: ElevatedButton(style: ElevatedButton.styleFrom(

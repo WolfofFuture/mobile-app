@@ -1,5 +1,5 @@
 import 'package:dsw_51781/utils/my_images.dart';
-import 'package:dsw_51781/views/home/home.dart';
+import 'package:dsw_51781/views/home/home_notes.dart';
 import 'package:dsw_51781/views/register/register_view.dart';
 import 'package:dsw_51781/views/widgets/basic_bold_text.dart';
 import 'package:dsw_51781/views/widgets/basic_sign_in.dart';
@@ -86,11 +86,11 @@ class _Login_ViewState extends State<Login_View> {
                 padding: const EdgeInsets.only(left: 20),
                 child: BasicBoldText(text: 'Sign in',fontSize: 30,),
               ),
-              BasicTextFormField(hintText: 'E-mail or User Name',
-              image1: Image.asset(MyImages.user),),
+              /*BasicTextFormField(hintText: 'E-mail or User Name',
+              image1: Image.asset(MyImages.user), controller: null,),
               BasicTextFormField(hintText: 'Password',
-              image1: Image.asset(MyImages.locky), image2: Image.asset(MyImages.ico_eye),
-              ),
+              image1: Image.asset(MyImages.locky), image2: Image.asset(MyImages.ico_eye), controller: null,
+              ),*/
               Padding(
                 padding: const EdgeInsets.only(right: 15,top: 15),
                 child: Align(
@@ -100,7 +100,7 @@ class _Login_ViewState extends State<Login_View> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 20),
-                child: Basic_Sign_In(initialValue: 'Sign in',),
+                child: Basic_Sign_In(buttonValue: 'Sign in',),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 190),

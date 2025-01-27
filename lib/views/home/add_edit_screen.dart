@@ -1,5 +1,5 @@
 import 'package:dsw_51781/utils/my_colors.dart';
-import 'package:dsw_51781/views/home/home.dart';
+import 'package:dsw_51781/views/home/home_notes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

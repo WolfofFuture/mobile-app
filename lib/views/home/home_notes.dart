@@ -64,8 +64,6 @@ Future<void> _loadNotes() async{
 
   @override
   Widget build(BuildContext context){
-    //return kIsWeb ? Placeholder() : Placeholder(color: MyColors.violetColor,);
-    //final width = Extensions.width(context);
     return Scaffold(
     backgroundColor: MyColors.lavenderColor,
     appBar: AppBar(
