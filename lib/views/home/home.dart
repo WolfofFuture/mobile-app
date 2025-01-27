@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:dsw_51781/utils/extensions.dart';
 import 'package:dsw_51781/utils/my_colors.dart';
 import 'package:dsw_51781/utils/my_images.dart';
+import 'package:dsw_51781/views/new_login/new_login.dart';
 import 'package:dsw_51781/views/notes/notes_model.dart';
 import 'package:dsw_51781/views/widgets/basic_log_in_site.dart';
 import 'package:dsw_51781/views/widgets/basic_sign_in.dart';
@@ -70,6 +71,17 @@ Future<void> _loadNotes() async{
     backgroundColor: MyColors.lavenderColor,
     appBar: AppBar(
       elevation: 0,
+      leading: IconButton(
+        onPressed: () async{
+          await Navigator.push(context,
+          MaterialPageRoute(
+              builder: (context) => NewLogin() ));
+        },
+        icon: Icon(
+          Icons.arrow_back,
+          color: Colors.black,
+        ),
+      ),
       backgroundColor: MyColors.lavenderColor,
       title: Text("My Notes",
       style: TextStyle(
