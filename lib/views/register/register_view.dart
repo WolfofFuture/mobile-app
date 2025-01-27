@@ -1,34 +1,25 @@
 import 'package:dsw_51781/utils/extensions.dart';
 import 'package:dsw_51781/utils/my_images.dart';
-import 'package:dsw_51781/views/login/logged_in.dart';
-import 'package:dsw_51781/views/login/login_view.dart';
 import 'package:dsw_51781/views/new_login/new_login.dart';
 import 'package:dsw_51781/views/widgets/basic_bold_text.dart';
 import 'package:dsw_51781/views/widgets/basic_sign_in.dart';
 import 'package:dsw_51781/views/widgets/basic_text.dart';
-import 'package:dsw_51781/views/widgets/basic_text_form_field.dart';
-import 'package:dsw_51781/views/widgets/basic_text_form_field_original.dart';
-import 'package:flutter/foundation.dart';
+import 'package:dsw_51781/views/widgets/basic_text_form_field_false.dart';
+import 'package:dsw_51781/views/widgets/basic_text_form_field_original_false.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import '../../utils/my_colors.dart';
 
 class Register_View extends StatefulWidget {
   const Register_View({super.key});
-
   @override
-  State<Register_View> createState() => _Register_ViewState();
-}
+  State<Register_View> createState() => _Register_ViewState();}
 
 class _Register_ViewState extends State<Register_View> {
   @override
   Widget build(BuildContext context) {
     final width = Extensions.width(context);
     return Scaffold(
-      body:
-        //width < 800 ? Placeholder() : Placeholder(color: Colors.yellow)
-      SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Row(
@@ -55,22 +46,16 @@ class _Register_ViewState extends State<Register_View> {
               padding: const EdgeInsets.only(left: 10,top: 20),
               child: Column(
                 children: [
-                  BasicTextFormField_ORG(hintText: 'Full Name', image1: Image.asset(MyImages.user),),
-                  BasicTextFormField_ORG(hintText: 'Email',image1: Image.asset(MyImages.mail),),
-                  BasicTextFormField(hintText: 'Password',isPasswordField:true,
+                  BasicTextFormField_ORG_FALSE(hintText: 'Full Name', image1: Image.asset(MyImages.user),),
+                  BasicTextFormField_ORG_FALSE(hintText: 'Email',image1: Image.asset(MyImages.mail),),
+                  BasicTextFormFieldFalse(hintText: 'Password',isPasswordField:true,
                     image1: Image.asset(MyImages.locky),),
-                  BasicTextFormField(hintText: 'Confirm Password',isPasswordField:true,
+                  BasicTextFormFieldFalse(hintText: 'Confirm Password',isPasswordField:true,
                     image1: Image.asset(MyImages.locky),),
                   Center(
                     child: Padding(padding: const EdgeInsets.all(15),
-                    child: ElevatedButton(style: ElevatedButton.styleFrom(
-                      backgroundColor:MyColors.violetColor,
-                      minimumSize: const Size(double.maxFinite, 50),
-                    ),onPressed: ()async{},
-                        child: Text('Sign Up',style: TextStyle(
-                          color: Colors.white,),)),),
+                    child: Basic_Sign_In(initialValue: 'Sign Up'),),
                   ),
-                  //Basic_Sign_In(initialValue: 'Sign Up',),
                   Padding(padding: const EdgeInsets.only(top:100),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -84,7 +69,6 @@ class _Register_ViewState extends State<Register_View> {
                                 (context) => const NewLogin())
                             );
                           }
-                        //onDoubleTap: () => print('clicked twice'),
                       ),
                     ],
                   ),)

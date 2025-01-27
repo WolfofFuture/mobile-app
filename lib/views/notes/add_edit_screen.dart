@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/database_help.dart';
-import '../notes/notes_model.dart';
+import 'notes_model.dart';
 
 class AddEditNoteScreen extends StatefulWidget {
   final Note? note;
@@ -69,7 +69,7 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return "Please enter a title";
+                          return "Please enter title";
                         }
                         return null;
                       },
@@ -86,7 +86,7 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
                       maxLines: 10,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return "Please enter a content";
+                          return "Please enter content";
                         }
                         return null;
                       },
@@ -118,29 +118,30 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
                             },
                           ).toList(),
                         ),
-                      ),)
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        _saveNote();
+                        Navigator.push(context, MaterialPageRoute(builder:(context) => Home()));
+                      },
+                      child: Container(
+                        margin: EdgeInsets.all(20),
+                        padding: EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                            color: MyColors.violetColor,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Center(
+                          child: Text("Save Note",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),),
+                        ),
+                      ),
+                    ),
                   ],
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  _saveNote();
-                  Navigator.push(context, MaterialPageRoute(builder:(context) => Home()));
-                },
-                child: Container(
-                  margin: EdgeInsets.all(20),
-                  padding: EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                      color: MyColors.violetColor,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Center(
-                    child: Text("Save Note",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),),
-                  ),
                 ),
               ),
             ],

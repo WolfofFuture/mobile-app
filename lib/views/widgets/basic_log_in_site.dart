@@ -1,6 +1,3 @@
-import 'package:dsw_51781/views/login/logged_in.dart';
-import 'package:dsw_51781/views/login/login_view.dart';
-import 'package:dsw_51781/views/new_login/new_login.dart';
 import 'package:flutter/material.dart';
 import 'package:dsw_51781/utils/my_colors.dart';
 import '../register/register_view.dart';
@@ -28,8 +25,7 @@ class Log_In_Site extends StatelessWidget{
                     onPressed:(){
                       Navigator.push(
                           context, MaterialPageRoute(
-                         // builder: (context)=>  Login_View()));
-                          builder: (context)=>  NewLogin()));
+                          builder: (context)=>  Register_View()));
                     }
                     ,),
                 ),

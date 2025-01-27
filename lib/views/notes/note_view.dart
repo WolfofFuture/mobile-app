@@ -1,8 +1,8 @@
 import 'package:dsw_51781/utils/database_help.dart';
-import 'package:dsw_51781/views/home/add_edit_screen.dart';
+import 'package:dsw_51781/views/notes/add_edit_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../notes/notes_model.dart';
+import 'notes_model.dart';
 
 class ViewNoteScreen extends StatelessWidget {
   final Note note;
@@ -24,6 +24,7 @@ class ViewNoteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(int.parse(note.color)),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -69,6 +70,8 @@ class ViewNoteScreen extends StatelessWidget {
               children: [
                 Text(
                   note.title,
+                  maxLines: 4,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,

@@ -14,8 +14,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../../utils/database_help.dart';
-import 'add_edit_screen.dart';
-import 'note_view.dart';
+import '../notes/add_edit_screen.dart';
+import '../notes/note_view.dart';
 
 
 class Home extends StatefulWidget{
@@ -65,8 +65,6 @@ Future<void> _loadNotes() async{
 
   @override
   Widget build(BuildContext context){
-    //return kIsWeb ? Placeholder() : Placeholder(color: MyColors.violetColor,);
-    //final width = Extensions.width(context);
     return Scaffold(
     backgroundColor: MyColors.lavenderColor,
     appBar: AppBar(

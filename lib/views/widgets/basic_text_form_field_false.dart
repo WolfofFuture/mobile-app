@@ -1,35 +1,26 @@
-//import 'package:dsw_51781/utils/my_images.dart';
 import 'package:dsw_51781/utils/my_colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/my_images.dart';
-
-
-class BasicTextFormField extends StatefulWidget {
+class BasicTextFormFieldFalse extends StatefulWidget {
   final String hintText;
   final Image? image1;
   final Image? image2;
   final bool isPasswordField;
-
-
-  const BasicTextFormField({
-    required this.hintText,
+  const BasicTextFormFieldFalse({required this.hintText,
     this.image1,this.image2,
     this.isPasswordField = false,
-    required this.controller,
     super.key,});
-  final TextEditingController controller;
   @override
-  State<BasicTextFormField> createState() => _BasicTextFormFieldState();}
+  State<BasicTextFormFieldFalse> createState() => _BasicTextFormFieldFalseState();}
 
-class _BasicTextFormFieldState extends State<BasicTextFormField>{
+class _BasicTextFormFieldFalseState extends State<BasicTextFormFieldFalse>{
   var _isPasswordVisible = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: TextFormField(
-          controller: widget.controller,
         obscureText: !_isPasswordVisible,
         decoration: InputDecoration(
           labelText: widget.hintText,
@@ -52,21 +43,19 @@ class _BasicTextFormFieldState extends State<BasicTextFormField>{
           });
         },
         child: _suffixIcon(_isPasswordVisible),
-          ) : null,
+          )
+              : null,
         )
         ),
       );
   }
 }
-
 Widget? _suffixIcon( bool isPasswordVisible){
   return isPasswordVisible
       ? Icon(
-    Icons.visibility, color: MyColors.blackColor,
-  )
+    Icons.visibility, color: MyColors.blackColor,)
       : Icon(
       Icons.visibility_off_outlined,
       color: MyColors.blackColor
   );
-
 }

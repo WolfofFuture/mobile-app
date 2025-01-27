@@ -28,7 +28,7 @@ class Basic_Sign_In extends StatelessWidget{
                         (){
                     Navigator.push(
                       context, MaterialPageRoute(
-                      builder: (context)=>  Home()));
+                      builder: (context)=>  Logged_In()));
                 }
                 ,),
               ),
